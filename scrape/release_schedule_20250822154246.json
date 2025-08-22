@@ -1,0 +1,161 @@
+{
+  "confidence_score": 1,
+  "message": "Data berhasil diambil",
+  "source": "dramaqu.ad",
+  "data": {
+    "Friday": [
+      {
+        "title": "Beyond the Bar",
+        "url": "https://dramaqu.ad/nonton-beyond-the-bar-subtitle-indonesia/",
+        "anime_slug": "nonton-beyond-the-bar-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/08/nonton-beyond-the-bar-subtitle-indonesia-236x350.jpeg",
+        "type": "TV",
+        "score": "9.4",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "08:42"
+      }
+    ],
+    "Monday": [
+      {
+        "title": "My Girlfriend is the Man!",
+        "url": "https://dramaqu.ad/nonton-my-girlfriend-is-the-man-subtitle-indonesia/",
+        "anime_slug": "nonton-my-girlfriend-is-the-man-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-my-girlfriend-is-the-man-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "8.8",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "16:43"
+      },
+      {
+        "title": "The Defects",
+        "url": "https://dramaqu.ad/nonton-the-defects-subtitle-indonesia/",
+        "anime_slug": "nonton-the-defects-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-the-defects-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "8.4",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "16:46"
+      }
+    ],
+    "Saturday": [
+      {
+        "title": "The Winning Try",
+        "url": "https://dramaqu.ad/nonton-the-winning-try-subtitle-indonesia/",
+        "anime_slug": "nonton-the-winning-try-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-the-winning-try-subtitle-indonesia-236x350.jpg",
+        "type": "Movie",
+        "score": "7.7",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "22:20"
+      }
+    ],
+    "Sunday": [
+      {
+        "title": "The Nice Guy",
+        "url": "https://dramaqu.ad/nonton-the-nice-guy-subtitle-indonesia/",
+        "anime_slug": "nonton-the-nice-guy-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-the-nice-guy-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "7.6",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "08:57"
+      }
+    ],
+    "Thursday": [
+      {
+        "title": "My Lovely Journey",
+        "url": "https://dramaqu.ad/nonton-my-lovely-journey-subtitle-indonesia/",
+        "anime_slug": "nonton-my-lovely-journey-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/08/nonton-my-lovely-journey-subtitle-indonesia-236x350.jpeg",
+        "type": "TV",
+        "score": "8.9",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "07:27"
+      }
+    ],
+    "Tuesday": [
+      {
+        "title": "Love, Take Two",
+        "url": "https://dramaqu.ad/nonton-love-take-two-subtitle-indonesia/",
+        "anime_slug": "nonton-love-take-two-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/08/nonton-love-take-two-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "8.0",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "21:58"
+      },
+      {
+        "title": "Law and the City",
+        "url": "https://dramaqu.ad/nonton-law-and-the-city-subtitle-indonesia/",
+        "anime_slug": "nonton-law-and-the-city-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-law-and-the-city-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "7.3",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "04:00"
+      }
+    ],
+    "Wednesday": [
+      {
+        "title": "My Troublesome Star",
+        "url": "https://dramaqu.ad/nonton-my-troublesome-starsubtitle-indonesia/",
+        "anime_slug": "nonton-my-troublesome-starsubtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/08/nonton-my-troublesome-starsubtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "7.1",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "04:16"
+      },
+      {
+        "title": "Our Golden Days",
+        "url": "https://dramaqu.ad/nonton-our-golden-days-subtitle-indonesia/",
+        "anime_slug": "nonton-our-golden-days-subtitle-indonesia",
+        "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/08/nonton-our-golden-days-subtitle-indonesia-236x350.jpg",
+        "type": "TV",
+        "score": "8.4",
+        "genres": [
+          "Drama",
+          "Romance",
+          "Comedy"
+        ],
+        "release_time": "17:34"
+      }
+    ]
+  }
+}

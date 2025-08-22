@@ -1,0 +1,751 @@
+basePath: /
+definitions:
+  models.AnimeInfo:
+    properties:
+      genres:
+        items:
+          type: string
+        type: array
+      synopsis:
+        type: string
+      thumbnail_url:
+        type: string
+      title:
+        type: string
+    type: object
+  models.DetailResponse:
+    properties:
+      anime_slug:
+        type: string
+      confidence_score:
+        type: number
+      cover:
+        type: string
+      details:
+        $ref: '#/definitions/models.DetailsObject'
+      episode_list:
+        items:
+          $ref: '#/definitions/models.EpisodeItem'
+        type: array
+      genre:
+        items:
+          type: string
+        type: array
+      judul:
+        type: string
+      message:
+        type: string
+      penonton:
+        type: string
+      rating:
+        $ref: '#/definitions/models.RatingObject'
+      recommendations:
+        items:
+          $ref: '#/definitions/models.RecommendationItem'
+        type: array
+      sinopsis:
+        type: string
+      skor:
+        type: string
+      source:
+        type: string
+      status:
+        type: string
+      tipe:
+        type: string
+      url:
+        type: string
+    type: object
+  models.DetailsObject:
+    properties:
+      Duration:
+        type: string
+      English:
+        type: string
+      Japanese:
+        type: string
+      Producers:
+        type: string
+      'Released:':
+        type: string
+      Season:
+        type: string
+      Source:
+        type: string
+      Status:
+        type: string
+      Studio:
+        type: string
+      Total Episode:
+        type: string
+      Type:
+        type: string
+    type: object
+  models.DownloadLinks:
+    properties:
+      MKV:
+        additionalProperties:
+          items:
+            $ref: '#/definitions/models.DownloadProvider'
+          type: array
+        type: object
+      MP4:
+        additionalProperties:
+          items:
+            $ref: '#/definitions/models.DownloadProvider'
+          type: array
+        type: object
+      x265 [Mode Irit Kuota tapi Kualitas Sama Beningnya]:
+        additionalProperties:
+          items:
+            $ref: '#/definitions/models.DownloadProvider'
+          type: array
+        type: object
+    type: object
+  models.DownloadProvider:
+    properties:
+      provider:
+        type: string
+      url:
+        type: string
+    type: object
+  models.DramaDetail:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      judul:
+        type: string
+      sinopsis:
+        type: string
+      skor:
+        type: string
+      status:
+        type: string
+      tanggal:
+        type: string
+      url:
+        type: string
+      views:
+        type: string
+    type: object
+  models.DramaEntry:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      episode:
+        type: string
+      judul:
+        type: string
+      rilis:
+        type: string
+      uploader:
+        type: string
+      url:
+        type: string
+    type: object
+  models.DramaListResponse:
+    properties:
+      confidence_score:
+        type: number
+      data:
+        items:
+          $ref: '#/definitions/models.DramaDetail'
+        type: array
+      message:
+        type: string
+      source:
+        type: string
+    type: object
+  models.EpisodeDetailResponse:
+    properties:
+      anime_info:
+        $ref: '#/definitions/models.AnimeInfo'
+      confidence_score:
+        type: number
+      download_links:
+        $ref: '#/definitions/models.DownloadLinks'
+      message:
+        type: string
+      navigation:
+        $ref: '#/definitions/models.Navigation'
+      other_episodes:
+        items:
+          $ref: '#/definitions/models.OtherEpisode'
+        type: array
+      release_info:
+        type: string
+      source:
+        type: string
+      streaming_servers:
+        items:
+          $ref: '#/definitions/models.StreamingServer'
+        type: array
+      thumbnail_url:
+        type: string
+      title:
+        type: string
+    type: object
+  models.EpisodeItem:
+    properties:
+      episode:
+        type: string
+      episode_slug:
+        type: string
+      release_date:
+        type: string
+      title:
+        type: string
+      url:
+        type: string
+    type: object
+  models.FinalResponse:
+    properties:
+      confidence_score:
+        type: number
+      jadwal_rilis:
+        $ref: '#/definitions/models.JadwalRilis'
+      message:
+        type: string
+      movies:
+        items:
+          $ref: '#/definitions/models.MovieItem'
+        type: array
+      new_eps:
+        items:
+          $ref: '#/definitions/models.NewEpsItem'
+        type: array
+      source:
+        type: string
+      top10:
+        items:
+          $ref: '#/definitions/models.Top10Item'
+        type: array
+    type: object
+  models.JadwalItem:
+    properties:
+      anime_slug:
+        type: string
+      cover_url:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      release_time:
+        type: string
+      score:
+        type: string
+      title:
+        type: string
+      type:
+        type: string
+      url:
+        type: string
+    type: object
+  models.JadwalRilis:
+    properties:
+      Friday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Monday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Saturday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Sunday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Thursday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Tuesday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+      Wednesday:
+        items:
+          $ref: '#/definitions/models.JadwalItem'
+        type: array
+    type: object
+  models.MovieItem:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      judul:
+        type: string
+      tanggal:
+        type: string
+      url:
+        type: string
+    type: object
+  models.Navigation:
+    properties:
+      all_episodes_url:
+        type: string
+      next_episode_url:
+        type: string
+      previous_episode_url:
+        type: string
+    type: object
+  models.NewEpsItem:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      episode:
+        type: string
+      judul:
+        type: string
+      rilis:
+        type: string
+      url:
+        type: string
+    type: object
+  models.OngoingDramaResponse:
+    properties:
+      confidence_score:
+        type: number
+      data:
+        items:
+          $ref: '#/definitions/models.DramaEntry'
+        type: array
+      message:
+        type: string
+      source:
+        type: string
+    type: object
+  models.OtherEpisode:
+    properties:
+      release_date:
+        type: string
+      thumbnail_url:
+        type: string
+      title:
+        type: string
+      url:
+        type: string
+    type: object
+  models.RatingObject:
+    properties:
+      score:
+        type: string
+      users:
+        type: string
+    type: object
+  models.RecommendationItem:
+    properties:
+      anime_slug:
+        type: string
+      cover_url:
+        type: string
+      episode:
+        type: string
+      rating:
+        type: string
+      title:
+        type: string
+      url:
+        type: string
+    type: object
+  models.ReleaseEntry:
+    properties:
+      anime_slug:
+        type: string
+      cover_url:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      release_time:
+        type: string
+      score:
+        type: string
+      title:
+        type: string
+      type:
+        type: string
+      url:
+        type: string
+    type: object
+  models.ReleaseScheduleResponse:
+    properties:
+      confidence_score:
+        type: number
+      data:
+        additionalProperties:
+          items:
+            $ref: '#/definitions/models.ReleaseEntry'
+          type: array
+        type: object
+      message:
+        type: string
+      source:
+        type: string
+    type: object
+  models.ScheduleByDayResponse:
+    properties:
+      confidence_score:
+        type: number
+      data:
+        items:
+          $ref: '#/definitions/models.ScheduleEntry'
+        type: array
+      message:
+        type: string
+      source:
+        type: string
+    type: object
+  models.ScheduleEntry:
+    properties:
+      anime_slug:
+        type: string
+      cover_url:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      release_time:
+        type: string
+      score:
+        type: string
+      title:
+        type: string
+      type:
+        type: string
+      url:
+        type: string
+    type: object
+  models.SearchDetail:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      genre:
+        items:
+          type: string
+        type: array
+      judul:
+        type: string
+      penonton:
+        type: string
+      sinopsis:
+        type: string
+      skor:
+        type: string
+      status:
+        type: string
+      tipe:
+        type: string
+      url:
+        type: string
+    type: object
+  models.SearchResponse:
+    properties:
+      confidence_score:
+        type: number
+      data:
+        items:
+          $ref: '#/definitions/models.SearchDetail'
+        type: array
+      message:
+        type: string
+      source:
+        type: string
+    type: object
+  models.StreamingServer:
+    properties:
+      server_name:
+        type: string
+      streaming_url:
+        type: string
+    type: object
+  models.Top10Item:
+    properties:
+      anime_slug:
+        type: string
+      cover:
+        type: string
+      genres:
+        items:
+          type: string
+        type: array
+      judul:
+        type: string
+      rating:
+        type: string
+      url:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: API untuk scraping data drama Korea dari dramaqu.ad
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: DramaQu API
+  version: "1.0"
+paths:
+  /api/v1/anime-detail:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil detail anime, film, atau series termasuk episode, sinopsis,
+        dan rekomendasi. Slug dapat berupa 'nama-anime', 'film/nama-film', atau 'series/nama-series'
+      parameters:
+      - description: 'Anime/Movie/Series slug (contoh: ''kobane-2022'', ''film/kobane-2022'',
+          ''series/legend-of-the-female-general'')'
+        in: query
+        name: anime_slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DetailResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get anime/movie/series detail
+      tags:
+      - anime-detail
+  /api/v1/anime-terbaru:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil daftar anime terbaru dengan pagination
+      parameters:
+      - default: 1
+        description: Nomor halaman
+        in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.OngoingDramaResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get anime terbaru
+      tags:
+      - anime-terbaru
+  /api/v1/episode-detail:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil detail episode termasuk server streaming dan link download
+      parameters:
+      - description: URL episode
+        in: query
+        name: episode_url
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EpisodeDetailResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get episode detail
+      tags:
+      - episode-detail
+  /api/v1/home:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil data homepage termasuk top 10 anime, episode terbaru,
+        film terbaru, dan jadwal rilis
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinalResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get homepage data
+      tags:
+      - Home
+  /api/v1/jadwal-rilis:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil jadwal rilis anime per hari
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ReleaseScheduleResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get jadwal rilis
+      tags:
+      - jadwal-rilis
+  /api/v1/jadwal-rilis/{day}:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil jadwal rilis anime untuk hari tertentu
+      parameters:
+      - description: Nama hari (monday, tuesday, wednesday, thursday, friday, saturday,
+          sunday)
+        in: path
+        name: day
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ScheduleByDayResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get jadwal rilis by day
+      tags:
+      - jadwal-rilis
+  /api/v1/movie:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil daftar film dengan pagination
+      parameters:
+      - default: 1
+        description: Nomor halaman
+        in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DramaListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get movies
+      tags:
+      - movie
+  /api/v1/search:
+    get:
+      consumes:
+      - application/json
+      description: Mencari anime berdasarkan judul
+      parameters:
+      - description: Query pencarian
+        in: query
+        name: query
+        required: true
+        type: string
+      - description: 'Nomor halaman (default: 1)'
+        in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SearchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Search anime
+      tags:
+      - search
+swagger: "2.0"

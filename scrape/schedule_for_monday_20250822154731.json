@@ -1,0 +1,21 @@
+{
+  "confidence_score": 1,
+  "message": "Data berhasil diambil",
+  "source": "dramaqu.ad",
+  "data": [
+    {
+      "title": "The Defects",
+      "url": "https://dramaqu.ad/nonton-the-defects-subtitle-indonesia/",
+      "anime_slug": "nonton-the-defects-subtitle-indonesia",
+      "cover_url": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://dramaqu.ad/wp-content/uploads/2025/07/nonton-the-defects-subtitle-indonesia-236x350.jpg",
+      "type": "TV",
+      "score": "8.0",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Action"
+      ],
+      "release_time": "23:17"
+    }
+  ]
+}
