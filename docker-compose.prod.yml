@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  dramaqu-api:
+    build: .
+    container_name: dramaqu-api-prod
+    ports:
+      - "52983:52983"
+    environment:
+      - GIN_MODE=release
+      - PORT=52983
+      - HOST=0.0.0.0
+      - TZ=Asia/Jakarta
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:52983/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - dramaqu-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dramaqu-api.rule=HostRegexp(`{host:.+}`)"
+      - "traefik.http.routers.dramaqu-api.entrypoints=websecure"
+      - "traefik.http.routers.dramaqu-api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.dramaqu-api.loadbalancer.server.port=52983"
+
+networks:
+  dramaqu-network:
+    driver: bridge

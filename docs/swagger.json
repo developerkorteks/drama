@@ -1,4 +1,8 @@
 {
+    "schemes": [
+        "http",
+        "https"
+    ],
     "swagger": "2.0",
     "info": {
         "description": "API untuk scraping data drama Korea dari dramaqu.ad",
@@ -15,7 +19,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "localhost:52983",
     "basePath": "/",
     "paths": {
         "/api/v1/anime-detail": {

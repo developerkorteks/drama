@@ -1,43 +1,94 @@
-.PHONY: run build docs clean test
+# Variables
+APP_NAME=dramaqu-api
+DOCKER_IMAGE=dramaqu-api:latest
+PORT=52983
 
-# Run the application
-run:
-	go run main.go
+# Default target
+.PHONY: help
+help:
+	@echo "Available commands:"
+	@echo "  build       - Build the Docker image"
+	@echo "  run         - Run the application with Docker Compose"
+	@echo "  stop        - Stop the application"
+	@echo "  restart     - Restart the application"
+	@echo "  logs        - Show application logs"
+	@echo "  clean       - Clean up Docker resources"
+	@echo "  dev         - Run in development mode"
+	@echo "  prod        - Run in production mode"
+	@echo "  swagger     - Generate Swagger documentation"
+	@echo "  test        - Run tests"
 
-# Build the application
+# Build Docker image
+.PHONY: build
 build:
-	go build -o bin/dramaqu main.go
+	@echo "Building Docker image..."
+	docker build -t $(DOCKER_IMAGE) .
+
+# Run with Docker Compose
+.PHONY: run
+run:
+	@echo "Starting application..."
+	docker-compose up -d
+
+# Stop application
+.PHONY: stop
+stop:
+	@echo "Stopping application..."
+	docker-compose down
+
+# Restart application
+.PHONY: restart
+restart: stop run
+
+# Show logs
+.PHONY: logs
+logs:
+	docker-compose logs -f
+
+# Clean up Docker resources
+.PHONY: clean
+clean:
+	@echo "Cleaning up Docker resources..."
+	docker-compose down -v
+	docker rmi $(DOCKER_IMAGE) 2>/dev/null || true
+	docker system prune -f
+
+# Development mode
+.PHONY: dev
+dev:
+	@echo "Running in development mode..."
+	GIN_MODE=debug PORT=$(PORT) go run main.go
+
+# Production mode
+.PHONY: prod
+prod:
+	@echo "Running in production mode..."
+	GIN_MODE=release PORT=$(PORT) go run main.go
 
 # Generate Swagger documentation
-docs:
-	swag init
+.PHONY: swagger
+swagger:
+	@echo "Generating Swagger documentation..."
+	swag init --parseDependency --parseInternal
 
-# Clean build artifacts
-clean:
-	rm -rf bin/
-	rm -rf docs/
-
-# Install dependencies
-deps:
-	go mod tidy
-	go mod download
-
-# Test the application
+# Run tests
+.PHONY: test
 test:
-	go test ./...
+	@echo "Running tests..."
+	go test -v ./...
 
-# Run with hot reload (requires air)
-dev:
-	air
+# Build and run
+.PHONY: deploy
+deploy: build run
 
-# Install air for hot reload
-install-air:
-	go install github.com/cosmtrek/air@latest
+# Health check
+.PHONY: health
+health:
+	@echo "Checking application health..."
+	curl -f http://localhost:$(PORT)/health || echo "Application is not healthy"
 
-# Setup project (install deps and generate docs)
-setup: deps docs
-	@echo "Project setup complete!"
-
-# Run in production mode
-prod:
-	GIN_MODE=release go run main.go
+# Show application status
+.PHONY: status
+status:
+	@echo "Application status:"
+	docker-compose ps

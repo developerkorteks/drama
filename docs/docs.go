@@ -1138,9 +1138,9 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "localhost:52983",
 	BasePath:         "/",
-	Schemes:          []string{},
+	Schemes:          []string{"http", "https"},
 	Title:            "DramaQu API",
 	Description:      "API untuk scraping data drama Korea dari dramaqu.ad",
 	InfoInstanceName: "swagger",

@@ -500,7 +500,7 @@ definitions:
       url:
         type: string
     type: object
-host: localhost:8080
+host: localhost:52983
 info:
   contact:
     email: support@swagger.io
@@ -748,4 +748,7 @@ paths:
       summary: Search anime
       tags:
       - search
+schemes:
+- http
+- https
 swagger: "2.0"

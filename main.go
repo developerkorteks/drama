@@ -4,7 +4,9 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
+	"github.com/nabilulilalbab/dramaqu/config"
 	"github.com/nabilulilalbab/dramaqu/handlers"
+	"github.com/nabilulilalbab/dramaqu/middleware"
 	"github.com/nabilulilalbab/dramaqu/routes"
 	"github.com/nabilulilalbab/dramaqu/services"
 	swaggerFiles "github.com/swaggo/files"
@@ -25,13 +27,22 @@ import (
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 
-// @host localhost:8080
+// @host localhost:52983
 // @BasePath /
+// @schemes http https
 func main() {
-	// Set Gin to release mode in production
-	// gin.SetMode(gin.ReleaseMode)
+	// Load configuration
+	cfg := config.LoadConfig()
+
+	// Set Gin mode based on environment
+	if cfg.Environment == "release" {
+		gin.SetMode(gin.ReleaseMode)
+	}
 
 	r := gin.Default()
+
+	// Add middleware for dynamic host detection
+	r.Use(middleware.DynamicSwaggerHost())
 
 	// Initialize services
 	homeService := services.NewHomeService()
@@ -54,16 +65,26 @@ func main() {
 	// Setup routes
 	routes.SetupRoutes(r, homeHandler, animeTerbaruHandler, movieHandler, scheduleHandler, searchHandler, detailHandler, episodeDetailHandler)
 
-	// Swagger endpoint
+	// Dynamic swagger config endpoint
+	r.GET("/swagger-config", middleware.SwaggerConfigHandler())
+
+	// Swagger endpoint with dynamic host support
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// Alternative swagger endpoint
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	log.Println("Server starting on :8080")
-	log.Println("Swagger documentation available at: http://localhost:8080/swagger/index.html")
+	log.Printf("Server starting on :%s", cfg.Port)
+	log.Printf("Environment: %s", cfg.Environment)
+	if cfg.IsDynamic {
+		log.Printf("Swagger Host: Dynamic (will detect from request)")
+		log.Printf("Swagger documentation available at: http://[your-domain]/swagger/index.html")
+	} else {
+		log.Printf("Swagger Host: %s", cfg.SwaggerHost)
+		log.Printf("Swagger documentation available at: http://%s/swagger/index.html", cfg.SwaggerHost)
+	}
 
-	if err := r.Run(":8080"); err != nil {
+	if err := r.Run(":" + cfg.Port); err != nil {
 		log.Fatal("Failed to start server:", err)
 	}
 }
