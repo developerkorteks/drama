@@ -27,7 +27,7 @@ import (
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 
-// @host localhost:52983
+// @host DYNAMIC_HOST
 // @BasePath /
 // @schemes http https
 func main() {
@@ -68,11 +68,14 @@ func main() {
 	// Dynamic swagger config endpoint
 	r.GET("/swagger-config", middleware.SwaggerConfigHandler())
 
+	// Dynamic swagger docs endpoint
+	r.GET("/api/swagger.json", middleware.DynamicSwaggerDocsHandler())
+
 	// Swagger endpoint with dynamic host support
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/swagger-config")))
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/api/swagger.json")))
 
 	// Alternative swagger endpoint
-	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/swagger-config")))
+	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/api/swagger.json")))
 
 	log.Printf("Server starting on :%s", cfg.Port)
 	log.Printf("Environment: %s", cfg.Environment)

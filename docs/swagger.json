@@ -19,7 +19,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:52983",
+    "host": "DYNAMIC_HOST",
     "basePath": "/",
     "paths": {
         "/api/v1/anime-detail": {

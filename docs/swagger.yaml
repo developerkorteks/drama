@@ -500,7 +500,7 @@ definitions:
       url:
         type: string
     type: object
-host: localhost:52983
+host: DYNAMIC_HOST
 info:
   contact:
     email: support@swagger.io
