@@ -69,10 +69,10 @@ func main() {
 	r.GET("/swagger-config", middleware.SwaggerConfigHandler())
 
 	// Swagger endpoint with dynamic host support
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/swagger-config")))
 
 	// Alternative swagger endpoint
-	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, ginSwagger.URL("/swagger-config")))
 
 	log.Printf("Server starting on :%s", cfg.Port)
 	log.Printf("Environment: %s", cfg.Environment)
